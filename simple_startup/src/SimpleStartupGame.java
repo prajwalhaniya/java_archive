@@ -1,4 +1,7 @@
 package simple_startup.src;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 
 public class SimpleStartupGame {
     public static void main(String[] args) {
@@ -6,18 +9,15 @@ public class SimpleStartupGame {
 
         GameHelper helper = new GameHelper();
         
-        SimpleStartup theStartup = new SimpleStartup();
+        Startup theStartup = new Startup();
 
-        int randomNum = (int) (Math.random() * 5);
-
-        int[] locations = { randomNum, randomNum + 1, randomNum + 2 };
-
+        ArrayList<String> locations = new ArrayList<>(Arrays.asList("A1", "A2", "A3", "A4", "A5"));
         theStartup.setLocationCells(locations);
         
         boolean isAlive = true;
 
         while (isAlive) {
-            int guess = helper.getUserInput("Enter a number");
+            String guess = helper.getUserInput("Enter a string");
             String result = theStartup.checkYourself(guess);
             numOfGuesses++;
             if (result.equals("kill")) {
