@@ -24,8 +24,6 @@ public class MusicMachine {
             player.setSequence(seq);
             player.start();
 
-
-
             System.out.println("Successfully got a sequencer");
         } catch (Exception e) {
             System.out.println(e);
